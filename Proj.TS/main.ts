@@ -1,8 +1,7 @@
-import { menu, adicionar_item, remover_item, editar_item, marcar_comprado, listar_itens, resumo_lista } from './functions';
+import { menu, adicionar_item as additional_item, remover_item, editar_item, marcar_comprado, listar_itens, resumo_lista } from './functions';
 
 function prompt(message: string): string | null {
-    
-    return window.prompt(message);
+  return window.prompt(message);
 }
 
 while (true) {
@@ -12,7 +11,7 @@ while (true) {
 
     switch (opcao) {
         case 1:
-            adicionar_item();
+            additional_item();
             break;
         case 2:
             remover_item();
