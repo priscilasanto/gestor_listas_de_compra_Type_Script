@@ -1,13 +1,19 @@
-import { menu, adicionar_item, remover_item, editar_item, marcar_comprado, listar_itens, resumo_lista,} from './gestor.ts';
-  
-  while (true) {
+import { menu, adicionar_item, remover_item, editar_item, marcar_comprado, listar_itens, resumo_lista } from './functions';
+
+function prompt(message: string): string | null {
+    
+    return window.prompt(message);
+}
+
+while (true) {
     menu();
-    const opcao = Number(prompt('Digite a opção: '));
-  
+    let opcaoString = prompt('Digite a opção: ');
+    let opcao = parseInt(opcaoString || '0');
+
     switch (opcao) {
-      case 1:
-        adicionar_item();
-        break;
+        case 1:
+            adicionar_item();
+            break;
         case 2:
             remover_item();
             break;
@@ -23,15 +29,15 @@ import { menu, adicionar_item, remover_item, editar_item, marcar_comprado, lista
         case 6:
             resumo_lista();
             break;
-      case 7:
-        console.log('Saindo...');
-        break;
-      default:
-        console.log('Opção inválida!!!');
+        case 7:
+            console.log('Saindo...');
+            console.log('Você saiu do programa! \nObrigado por nos escolher!!!');
+            break;
+        default:
+            console.log('Opção inválida!!!');
     }
-  
+
     if (opcao === 7) {
-      console.log('Você saiu do programa! \nObrigado por nos escolher!!!');
-      break;
+        break;
     }
-  }
+}
