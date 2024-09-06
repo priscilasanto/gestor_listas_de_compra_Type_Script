@@ -32,7 +32,7 @@ while (true) {
             break;
         case 7:
             console.log('Saindo...');
-        //process.exit(0);
+        process.exit(0);
         default:
             console.log('Opção inválida!');
     }
