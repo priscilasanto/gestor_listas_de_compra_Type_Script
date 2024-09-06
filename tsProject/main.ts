@@ -1,12 +1,12 @@
-import prompt from 'prompt-sync';
+import promptSync from 'prompt-sync';
 import { menu, adicionar_item, remover_item, editar_item, marcar_comprado, listar_itens, resumo_lista } from './functions';
 
-const promptSync = prompt();
+const prompt = promptSync();
 
 while (true) {
   menu();
 
-  const opcaoString = promptSync('Digite a opção: ');
+  const opcaoString = prompt('Digite a opção: ');
   const opcao = parseInt(opcaoString, 10);
 
   if (isNaN(opcao)) {
@@ -19,24 +19,24 @@ while (true) {
       adicionar_item();
       break;
     case 2:
-        remover_item();
-        break;
+      remover_item();
+      break;
     case 3:
-        editar_item();
-        break;
+      editar_item();
+      break;
     case 4:
-        marcar_comprado();
-        break;
+      marcar_comprado();
+      break;
     case 5:
-        listar_itens();
-        break;
+      listar_itens();
+      break;
     case 6:
-        resumo_lista();
-        break;
+      resumo_lista();
+      break;
     case 7:
       console.log('Saindo...');
-      process.exit(0);
+      //process.exit(0);
     default:
-      console.log('Opção inválida!!!');
+      console.log('Opção inválida!');
   }
 }
